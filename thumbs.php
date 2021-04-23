@@ -21,7 +21,7 @@
       endif;
       ?>
       
-        <?php if (is_page_template('highres.php')){ eg_CAnav(false); } ?>
+
 
 </main>
 
