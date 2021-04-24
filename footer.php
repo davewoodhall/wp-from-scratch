@@ -1,6 +1,11 @@
+<?php
+	if ( ! defined( 'ABSPATH' ) )
+		exit; // Exit if accessed directly.
+?>
+
 <!---  FOOTER STARTS  HERE -----> 
 	<footer>
-		<p>&copy;Eric Girouard, 2021</p>
+		<p>&copy;Eric Girouard, <?php /* Include a dynamic year (current 4-digit year) */ echo date('Y'); ?></p>
 		
 	
 <!-- ********  GET FOOTER ******************** -->

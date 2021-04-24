@@ -1,4 +1,18 @@
 <?php
+
+	if ( ! defined( 'ABSPATH' ) )
+		exit; // Exit if accessed directly.
+
+  /**
+   * Include some files.
+   */
+  include_once('helpers/filters.php');
+	include_once('helpers/internationalization.php');
+  include_once('helpers/structure.php');
+	include_once('helpers/theme.php');
+
+
+
 /*
  * Proper way to enqueue scripts and styles.
  */
@@ -19,9 +33,9 @@ add_action( 'wp_enqueue_scripts', 'mycustomtheme_scripts' );
   function register_my_menus() {
       register_nav_menus(
         array(
-          'header-menu' => __( 'Header Menu' ),
-          'footer-menu' => __( 'Footer Menu' ),
-          'social-menu' => __( 'Social Menu' ),
+          'header-menu' => __( 'Header Menu', 'wp-from-scratch' ),
+          'footer-menu' => __( 'Footer Menu', 'wp-from-scratch' ),
+          'social-menu' => __( 'Social Menu', 'wp-from-scratch' ),
         )
       );
     }

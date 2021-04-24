@@ -15,13 +15,27 @@
 
 <main id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
       <?php 
-         if ( have_posts() ) : 
-          while ( have_posts() ) : the_post();
-              the_content();
-          endwhile;
-      else :
-          _e( 'Sorry, no posts matched your criteria.', 'wp-from-scratch' );
-      endif;
+			if ( have_posts() ) {
+				while ( have_posts() ) {
+					the_post();
+					the_content();
+				}
+				
+				if( function_exists('jacgwd_post_meta') ) {
+					jacgwd_post_meta();
+				}
+			
+				// Is the post split in multiple pages ?
+				if( function_exists('jacgwd_pagination') ) {
+					jacgwd_pagination();
+				}
+			}
+			else {
+				_e( 'Sorry, no posts matched your criteria.', 'wp-from-scratch' );
+			}
+			
+			comments_template();
+		
       ?>
       
 

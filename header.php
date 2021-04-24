@@ -1,3 +1,7 @@
+<?php
+	if ( ! defined( 'ABSPATH' ) )
+		exit; // Exit if accessed directly.
+?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
 <head>
@@ -15,7 +19,7 @@
 </head>
 
 <body <?php body_class(); ?>>
-
+	<?php wp_body_open(); ?>
   
 <!--- HEADER STARTS HERE ----->
 <header>
@@ -23,13 +27,13 @@
     <?php get_search_form(); ?>
 
     <div class="site-title">
-        <a href="<?php echo get_option('home'); ?>">
+        <a href="<?php echo esc_url( home_url() ); ?>">
           <?php bloginfo('name'); ?>
         </a>
     </div>
 
     <div class="description">
-        <a href="<?php echo get_option('home'); ?>">
+        <a href="<?php echo esc_url( home_url() ); ?>">
           <?php bloginfo('description'); ?>
           <?php // This is the WP site tagline, not the meta description tag ?>
         </a>
